@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "flow-service"
+version = "0.1.0"
+description = "API para extrair ações de fluxos BLiP com MCP"
+authors = ["Higor Della Serra <higor.serra@wlck.com.br>"]
+readme = "README.md"
+packages = [
+  { include = "app", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = ">=0.115.12,<0.116.0"
+uvicorn = { extras = ["standard"], version = ">=0.34.2,<0.35.0" }
+pydantic = ">=2.11.4,<3.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,24 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Virtualenvs
+.venv/
+.env
+.envrc
+
+# VS Code settings
+.vscode/
+
+# Poetry
+poetry.lock
+
+# Build
+*.egg-info/
+dist/
+build/
+
+# Test/cache
+.pytest_cache/
+.coverage
+htmlcov/

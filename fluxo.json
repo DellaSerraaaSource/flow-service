@@ -1,0 +1,32 @@
+{
+  "flow": {
+    "bloco1": {
+      "$title": "Bloco de Teste",
+      "$leavingCustomActions": [
+        {
+          "type": "SetVariable",
+          "settings": {
+            "variable": "email",
+            "value": "teste@example.com"
+          }
+        }
+      ],
+      "$enteringCustomActions": [
+        {
+          "type": "TrackEvent",
+          "category": "entrada",
+          "action": "acesso"
+        }
+      ],
+      "$contentActions": [
+        {
+          "type": "SendMessage",
+          "settings": {
+            "type": "text/plain",
+            "content": "Olá, seja bem-vindo!"
+          }
+        }
+      ]
+    }
+  }
+}
