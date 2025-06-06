@@ -1,7 +1,6 @@
 # 🚀 Flow-Service
 
-API construída com **FastAPI** e **Poetry**, projetada para extrair ações de fluxos da plataforma **BLiP**, permitindo a visualização de ações de entrada, saída e conteúdo.  
-A resposta pode ser formatada opcionalmente de acordo com o protocolo **MCP (Message Context Protocol)**, facilitando a integração com LLMs e agentes inteligentes.
+API construída com **FastAPI** e **Poetry**, projetada para extrair ações de fluxos da plataforma **BLiP**, permitindo a visualização de ações de entrada, saída e conteúdo.
 
 ---
 
@@ -11,7 +10,6 @@ A resposta pode ser formatada opcionalmente de acordo com o protocolo **MCP (Mes
 - [Poetry](https://python-poetry.org/)
 - [Pydantic](https://docs.pydantic.dev/)
 - [Uvicorn](https://www.uvicorn.org/)
-- JSON-RPC 2.0 (padrão MCP)
 
 ---
 
@@ -25,7 +23,7 @@ flow-service/
     └── app/
         ├── core/             # Armazena o fluxo atual em memória
         ├── models/           # Schemas Pydantic
-        ├── services/         # Extração de ações e formatação MCP
+        ├── services/         # Extração de ações
         ├── routes/           # Rotas: /import, /leaving, /entering, /content
         └── main.py           # Instância FastAPI
 ```
@@ -76,8 +74,8 @@ curl -X POST http://localhost:8000/import \
 
 ---
 
-### GET `/leaving/{action}`  
-### GET `/entering/{action}`  
+### GET `/leaving/{action}`
+### GET `/entering/{action}`
 ### GET `/content/{action}`
 
 Retorna todas as ações de determinado tipo:
@@ -86,26 +84,7 @@ Retorna todas as ações de determinado tipo:
 curl http://localhost:8000/leaving/SetVariable
 ```
 
-Com resposta MCP:
 
-```bash
-curl "http://localhost:8000/leaving/SetVariable?mcp=true&id=abc123"
-```
-
----
-
-## 📦 Formato da resposta MCP
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": "abc123",
-  "method": "flow.leaving.SetVariable",
-  "params": {
-    "data": [ ... ]
-  }
-}
-```
 
 ---
 

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "flow-service"
 version = "0.1.0"
-description = "API para extrair ações de fluxos BLiP com MCP"
+description = "API para extrair ações de fluxos BLiP"
 authors = ["Higor Della Serra <higor.serra@wlck.com.br>"]
 readme = "README.md"
 packages = [
